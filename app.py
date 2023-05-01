@@ -15,12 +15,6 @@ basedir = os.path.abspath(os.path.dirname(__file__))
 
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///' + os.path.join(basedir, 'db.sqlite3')
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False 
-app.config['UPLOAD_FOLDER'] = 'uploads'
-app.config['MAX_CONTENT_LENGTH'] = 16 * 1024 * 1024
- 
-ALLOWED_IMAGE_FILE_EXTENSIONS = set(['png', 'jpg', 'jpeg'])
-
-ALLOW_TEST_RESULT_EXTENSIONS = set(['html', 'xml'])
 
 # Init DB
 db = SQLAlchemy(app)
