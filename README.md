@@ -3,8 +3,8 @@
 
 ## Running local flask server
 * pip install virtualenv
-* python3 -m venv env
-* source env/bin/activate 
+* python -m venv env
+* source env/bin/activate or source env/Scripts/activate (for windows)
 * pip install -r requirements.txt
 * python app.py
 

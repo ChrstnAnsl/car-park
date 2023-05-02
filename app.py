@@ -69,10 +69,11 @@ user_schema = UserSchema()
 @app.route('/', methods=['GET'])
 def test():
 
-    return {
-        'message': 'welcome to Online Parking Management',
-        'author': 'test'
-    }
+    return render_template('login.html')
+    # return {
+    #     'message': 'welcome to Online Parking Management',
+    #     'author': 'test'
+    # }
 
 @app.route('/user', methods=['POST'])
 def add_user():
