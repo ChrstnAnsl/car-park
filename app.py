@@ -75,7 +75,11 @@ def test():
     #     'author': 'test'
     # }
 
-@app.route('/user', methods=['POST'])
+@app.route('/index', methods=['GET'])
+def index():
+    return render_template('index.html')
+
+@app.route('/register-new-user', methods=['POST'])
 def add_user():
     username = request.json['username']
     password = request.json['password']

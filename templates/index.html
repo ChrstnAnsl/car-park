@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="{{ url_for('static', filename='styles/index.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='styles/parking.css') }}">
+    </head>
+    <title>
+        Index
+    </title>
+    <body>
+        <div>
+            <aside>
+                <p> Profile </p>
+                <a href="javascript:void(0)">
+                  <i class="fa fa-user-o" aria-hidden="true"></i>
+                  Parkring
+                </a>
+                <a href="javascript:void(0)">
+                  <i class="fa fa-laptop" aria-hidden="true"></i>
+                  Reservation
+                </a>
+                <a href="javascript:void(0)">
+                  <i class="fa fa-clone" aria-hidden="true"></i>
+                  Contact Administration
+                </a>
+                <a href="javascript:void(0)">
+                  <i class="fa fa-trash-o" aria-hidden="true"></i>
+                  Logout
+                </a>
+            </aside>
+            <div class="right">
+                <div class="row">
+                    <div class="column">
+                        Slot 1 <br/>
+                        Available <br/>
+                        <img src="{{ url_for('static', filename='images/empty-slot.png') }}" alt="Empty Slot">
+                    </div>
+                    <div class="column">
+                        Slot 3 <br/>
+                        Available <br/>
+                        <img src="{{ url_for('static', filename='images/empty-slot.png') }}" alt="Empty Slot">
+                    </div>
+                    <div class="column">
+                        Slot 2 <br/>
+                        Available <br/>
+                        <img src="{{ url_for('static', filename='images/empty-slot.png') }}" alt="Empty Slot">
+                    </div>
+                    <div class="column">
+                        Slot 4 <br/>
+                        Occupied <br/>
+                        <img src="{{ url_for('static', filename='images/occupied-slot.png') }}" alt="Occupied">
+                    </div>
+                    <div class="column">
+                        Slot 4 <br/>
+                        Occupied <br/>
+                        <img src="{{ url_for('static', filename='images/occupied-slot.png') }}" alt="Occupied">
+                    </div>
+                    <div class="column">
+                        Slot 4 <br/>
+                        Occupied <br/>
+                        <img src="{{ url_for('static', filename='images/occupied-slot.png') }}" alt="Occupied">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
