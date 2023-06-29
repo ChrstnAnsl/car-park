@@ -12,17 +12,17 @@
         <div>
             <aside>
                 <p> Profile </p>
-                <a href="javascript:void(0)">
-                  <i class="fa fa-user-o" aria-hidden="true"></i>
-                  Parkring
-                </a>
+                <a href="{{ url_for('parking') }}">
+                    <i class="fa fa-user-o" aria-hidden="true"></i>
+                    Parkring
+                  </a>                  
                 <a href="javascript:void(0)">
                   <i class="fa fa-laptop" aria-hidden="true"></i>
                   Reservation
                 </a>
-                <a href="javascript:void(0)">
+                <a href="{{ url_for('reports') }}">
                   <i class="fa fa-clone" aria-hidden="true"></i>
-                  Contact Administration
+                  Reports
                 </a>
                 <a href="javascript:void(0)">
                   <i class="fa fa-trash-o" aria-hidden="true"></i>
@@ -30,38 +30,7 @@
                 </a>
             </aside>
             <div class="right">
-                <div class="row">
-                    <div class="column">
-                        Slot 1 <br/>
-                        Available <br/>
-                        <img src="{{ url_for('static', filename='images/empty-slot.png') }}" alt="Empty Slot">
-                    </div>
-                    <div class="column">
-                        Slot 3 <br/>
-                        Available <br/>
-                        <img src="{{ url_for('static', filename='images/empty-slot.png') }}" alt="Empty Slot">
-                    </div>
-                    <div class="column">
-                        Slot 2 <br/>
-                        Available <br/>
-                        <img src="{{ url_for('static', filename='images/empty-slot.png') }}" alt="Empty Slot">
-                    </div>
-                    <div class="column">
-                        Slot 4 <br/>
-                        Occupied <br/>
-                        <img src="{{ url_for('static', filename='images/occupied-slot.png') }}" alt="Occupied">
-                    </div>
-                    <div class="column">
-                        Slot 4 <br/>
-                        Occupied <br/>
-                        <img src="{{ url_for('static', filename='images/occupied-slot.png') }}" alt="Occupied">
-                    </div>
-                    <div class="column">
-                        Slot 4 <br/>
-                        Occupied <br/>
-                        <img src="{{ url_for('static', filename='images/occupied-slot.png') }}" alt="Occupied">
-                    </div>
-                </div>
+                Welcome User!
             </div>
         </div>
     </body>

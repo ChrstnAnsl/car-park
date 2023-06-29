@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/index.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/parking.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/chart.css') }}">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  </head>
+  <title>
+    Index
+  </title>
+  <body>
+    <div>
+        <aside>
+            <p> Profile </p>
+            <a href="{{ url_for('parking') }}">
+                <i class="fa fa-user-o" aria-hidden="true"></i>
+                Parkring
+              </a>                  
+              <a href="javascript:void(0)">
+              <i class="fa fa-laptop" aria-hidden="true"></i>
+              Reservation
+            </a>
+            <a href="{{ url_for('reports') }}">
+              <i class="fa fa-clone" aria-hidden="true"></i>
+              Reports
+            </a>
+            <a href="javascript:void(0)">
+              <i class="fa fa-trash-o" aria-hidden="true"></i>
+              Logout
+            </a>
+        </aside>
+        <div class="right">
+            <div class="chart-grid">
+                <div class="chart-container">
+                  <canvas id="dailyChart"></canvas>
+                </div>
+                <div class="chart-container">
+                  <canvas id="monthlyChart"></canvas>
+                </div>
+                <div class="chart-container">
+                  <canvas id="weeklyChart"></canvas>
+                </div>
+                <div class="chart-container">
+                  <canvas id="yearlyChart"></canvas>
+                </div>
+              </div> 
+        </div>
+    </div>
+    <script>
+        const daily = document.getElementById('dailyChart').getContext('2d');
+        const monthly = document.getElementById('monthlyChart').getContext('2d');
+        const weekly = document.getElementById('weeklyChart').getContext('2d');
+        const yearly = document.getElementById('yearlyChart').getContext('2d');
+
+        const dailyChart = new Chart(daily, {
+        type: 'bar',
+        data: {
+            labels: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
+            datasets: [
+            {
+                label: 'Daily Data',
+                data: [30, 25, 40, 35, 50, 45, 55],
+                backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                borderColor: 'rgba(75, 192, 192, 1)',
+                borderWidth: 1
+            }
+            ]
+        },
+        options: {
+            scales: {
+            y: {
+                beginAtZero: true
+            }
+            }
+        }
+        });
+
+        // Create the monthly chart
+        const monthlyChart = new Chart(monthly, {
+        type: 'line',
+        data: {
+            labels: ['January', 'February', 'March', 'April', 'May', 'June'],
+            datasets: [
+            {
+                label: 'Monthly Data',
+                data: [100, 200, 150, 300, 250, 400],
+                backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                borderColor: 'rgba(54, 162, 235, 1)',
+                borderWidth: 1
+            }
+            ]
+        },
+        options: {
+            scales: {
+            y: {
+                beginAtZero: true
+            }
+            }
+        }
+        });
+
+        // Create the weekly chart
+        const weeklyChart = new Chart(weekly, {
+        type: 'bar',
+        data: {
+            labels: ['Week 1', 'Week 2', 'Week 3', 'Week 4', 'Week 5'],
+            datasets: [
+            {
+                label: 'Weekly Data',
+                data: [50, 40, 60, 55, 70],
+                backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                borderColor: 'rgba(255, 99, 132, 1)',
+                borderWidth: 1
+            }
+            ]
+        },
+        options: {
+            scales: {
+            y: {
+                beginAtZero: true
+            }
+            }
+        }
+        });
+
+        // Create the yearly chart
+        const yearlyChart = new Chart(yearly, {
+        type: 'line',
+        data: {
+            labels: ['2018', '2019', '2020', '2021', '2022'],
+            datasets: [
+            {
+                label: 'Yearly Data',
+                data: [800, 900, 1000, 1200, 1100],
+                backgroundColor: 'rgba(255, 206, 86, 0.2)',
+                borderColor: 'rgba(255, 206, 86, 1)',
+                borderWidth: 1
+            }
+            ]
+        },
+        options: {
+            scales: {
+            y: {
+                beginAtZero: true
+            }
+            }
+        }
+        });
+
+    </script>
+  </body>
+</html>

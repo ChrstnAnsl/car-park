@@ -1,0 +1,16 @@
+.chart-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 20px;
+  }
+  
+  .chart-container {
+    border: 1px solid #ccc;
+    padding: 10px;
+  }
+
+  .chart-container > canvas {
+    /* height: 5000px; */
+    width: 500px;
+  }

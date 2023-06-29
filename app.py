@@ -1,4 +1,4 @@
-from flask import Flask, request, jsonify, render_template
+from flask import Flask, request, jsonify, render_template, redirect, url_for
 from flask_cors import CORS
 from flask_sqlalchemy import SQLAlchemy
 from flask_marshmallow import Marshmallow
@@ -79,6 +79,14 @@ def test():
 def index():
     return render_template('index.html')
 
+@app.route('/parking', methods=['GET'])
+def parking():
+    return render_template('parking.html')
+
+@app.route('/reports', methods=['GET'])
+def reports():
+    return render_template('reports.html')
+
 @app.route('/register-new-user', methods=['POST'])
 def add_user():
     username = request.json['username']
@@ -104,12 +112,9 @@ def add_user():
 # unfinished
 @app.route('/login', methods=['POST'])
 def login():
-    username = request.json['username']
-    password = request.json['password']
 
-    product = User.query.get(id)
 
-    return {'message': 'succesfully logged in'}
+    return redirect(url_for('index'))
 
 
 if __name__ == '__main__':
